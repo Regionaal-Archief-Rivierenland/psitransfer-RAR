@@ -44,8 +44,6 @@
       .row
         .col-sm-7
           files
-        .col-sm-5
-          settings
           .text-right(v-show='showUploadBtn')
             button#uploadBtn.btn.btn-lg.btn-success(@click="$store.dispatch('upload/upload')")
               icon.fa-fw(name="upload")
@@ -60,7 +58,6 @@
   import { Encoder, ErrorCorrectionLevel, QRByte } from "@nuintun/qrcode";
   import { mapState, mapGetters } from 'vuex';
 
-  import Settings from './Upload/Settings.vue';
   import Files from './Upload/Files.vue';
   import Clipboard from './common/Clipboard.vue'
   import 'vue-awesome/icons/cloud-upload-alt';
@@ -76,7 +73,6 @@
   export default {
     name: 'Upload',
     components: {
-      Settings,
       Files,
       Clipboard,
     },
